@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pomodoro</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js'></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="main-page">
+            <div class="left-content">
+                <div class="add-task">
+                    <input type="text" class="add-task__input add-task__input--red" placeholder="ADD A NEW MISSION...">
+                    <a href="#" class="add-task__icon-link">
+                        <i class="material-icons add-task__icon">add</i>
+                    </a>
+                </div>
+                <div class="processing-task">
+                    <div class="task-info">
+                        <i class="material-icons unchecked-icon unchecked-icon--lg unchecked-icon--blue">radio_button_unchecked</i>
+                        <div class="task-content">
+                            <h2 class="task-content__text"></h2>
+                            <div class="complete-icons">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="remain-time">
+                        <h2 class="remain-time__text">25:00</h2>
+                    </div>
+                </div>
+                <div class="waiting-task">
+                    <ul class="waiting-task__ul">
+                    </ul>
+                    <div class="more"></div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="timing">
+                    <div class="timing-inner">
+                        <a href="#" class="status-icon-link">
+                            <i class="material-icons status-icon" data-status="work-stop">play_circle_filled</i>
+                        </a>
+                        <div class="stop"></div>
+                    </div>
+                </div>
+                <div class="menu">
+                    <ul class="menu__list">
+                        <li class="todo-list menu-item"><a href="#" class="menu-item__link"><i class="material-icons menu-item__icon">list</i></a></li>
+                        <li class="analyze menu-item"><a href="#" class="menu-item__link"><i class="material-icons menu-item__icon">assessment</i></a></li>
+                        <li class="music menu-item"><a href="#" class="menu-item__link"><i class="material-icons menu-item__icon">library_music</i></a></li>
+                    </ul>
+                </div>
+                <div class="logo"><h1 class="logo__text">POMODORO</h1></div>
+            </div>
+        </div>
+        <div class="todo-list-page">
+            <div class="left-content">
+                <div class="menu">
+                    <ul>
+                        <li class="todo-list menu-item">
+                            <a href="#" class="menu-item__link">
+                                <i class="material-icons menu-item__icon">list</i>
+                                TO-DO LIST
+                            </a>
+                        </li>
+                        <li class="analyze menu-item">
+                            <a href="#" class="menu-item__link">
+                                <i class="material-icons menu-item__icon">assessment</i>
+                                ANALYTICS
+                            </a>
+                        </li>
+                        <li class="music menu-item">
+                            <a href="#" class="menu-item__link">
+                                <i class="material-icons menu-item__icon">library_music</i>
+                                RINGTONES
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="half-circle">
+                    <div class="half-circle-inner">
+                        <div class="play-circle">
+                            <div class="play-icon-circle">
+                                <a href="#" class="play-icon-circle__link">
+                                    <i class="material-icons play-icon-circle__icon">play_arrow</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="remain-time">
+                        <h2 class="remain-time__text">25:00</h2>
+                    </div>
+                    <div class="task-content">
+                        <h2 class="task-content__text"></h2>
+                    </div>
+                </div>  
+            </div>
+            <div class="center-content">
+                <div class="center-content__todo-list">
+                    <div class="add-task">
+                        <input type="text" class="add-task__input" placeholder="ADD A NEW MISSION...">
+                        <a href="#" class="add-task__icon-link">
+                            <i class="material-icons add-task__icon">add</i>
+                        </a>
+                    </div>
+                    <div class="list-block todo-block waiting-task">
+                        <div class="title">
+                            <h2 class="title__text">TO-DO</h2>
+                            <i class="material-icons title__icon">expand_less</i>
+                        </div>
+                        <ul class="list-block__ul">
+                        </ul>
+                    </div>
+                    <div class="list-block done-block waiting-task">
+                        <div class="title">
+                            <h2 class="title__text">DONO</h2>
+                            <i class="material-icons title__icon">expand_less</i>
+                        </div>
+                        <ul class="list-block__ul">
+                        </ul>
+                    </div>
+                </div>
+                <div class="center-content__analytics">
+                    <div class="list-block">
+                        <div class="title">
+                            <h2 class="title__text">FOCUS TIME</h2>
+                        </div>
+                        <div class="count-block">
+                            <div class="today">
+                                <h3 class="count__title">TODAY</h3>
+                                <div class="county-info">
+                                    <h2 class="count-info__num"></h2>
+                                    <h3 class="count-info__text">/TOMATO</h2>
+                                </div>
+                            </div>
+                            <div class="week">
+                                <h3 class="count__title">WEEK</h3>
+                                <div class="county-info">
+                                    <h2 class="count-info__num">108</h2>
+                                    <h3 class="count-info__text">/TOMATO</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-block chart-block">
+                        <div class="title">
+                            <h2 class="title__text">CHART</h2>
+                            <div class="date-choose">
+                                <i class="material-icons date-choose__before-icon">navigate_before</i>
+                                <h3 class="date-choose__text"></h3>
+                                <i class="material-icons date-choose__next-icon">navigate_next</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-content__music">
+                    <div class="list-block">
+                        <div class="title">
+                            <h2 class="title__text">WORK</h2>
+                        </div>
+                        <div class="select-block work-block">
+                            <div class="none select-block__item">
+                                <i class="material-icons work-icon unchecked-icon unchecked-icon--sm unchecked-icon--white">radio_button_unchecked</i>
+                                <h3 class="select-block__text">NONE</h3>
+                            </div>
+                            <div class="alarm select-block__item">
+                                <i class="material-icons work-icon unchecked-icon unchecked-icon--sm unchecked-icon--white">radio_button_unchecked</i>
+                                <h3 class="select-block__text">ALARM</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-block">
+                        <div class="title">
+                            <h2 class="title__text">BREAK</h2>
+                        </div>
+                        <div class="select-block break-block">
+                            <div class="none select-block__item">
+                                <i class="material-icons break-icon unchecked-icon unchecked-icon--sm unchecked-icon--white">radio_button_unchecked</i>
+                                <h3 class="select-block__text">NONE</h3>
+                            </div>
+                            <div class="alarm select-block__item">
+                                <i class="material-icons break-icon unchecked-icon unchecked-icon--sm unchecked-icon--white">radio_button_unchecked</i>
+                                <h3 class="select-block__text">ALARM</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <a href="#" class="home"><i class="material-icons home__icon">clear</i></a>
+                <div class="logo"><h1 class="logo__text">POMODORO</h1></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/all.js"></script>
+</body>
+</html>

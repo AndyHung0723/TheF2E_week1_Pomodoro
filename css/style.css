@@ -1,0 +1,556 @@
+/*******************************/
+/********** CSS reset **********/
+/*******************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*******************************/
+/************ Font *************/
+/*******************************/
+@font-face {
+    font-family: 'Futura';
+    src: url('/font/unicode.futurab.ttf');
+}
+
+/*******************************/
+/************ Layout ***********/
+/*******************************/
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.wrap {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+/***** 主頁面 *****/
+.main-page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.main-page .left-content {
+    width: 60%;
+    background-color: #FFEDF7;
+    padding: 48px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.main-page .right-content {
+    width: 40%;
+    background-color: #003164;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 48px 80px;
+    position: relative;
+}
+.add-task {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    width: 445px;
+    padding: 16px;
+    color: #FF4384;
+}
+.add-task__input, .add_task__input:focus {
+    width: 100%;
+    color: #003164;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+}
+.add-task__input::placeholder {
+    color: #FF4384;
+    font-style: italic;
+}
+.add-task__input--blue::placeholder {
+    color: #00A7FF;
+}
+.add-task__input--red::placeholder {
+    color: #FF4384;
+}
+.add-task__icon {
+    color: #FF4384;
+    font-size: 24px;
+}
+.unchecked-icon {
+    margin-right: 16px;
+    cursor: pointer;
+}
+.unchecked-icon--lg {
+    font-size: 48px;
+}
+.unchecked-icon--sm {
+    font-size: 24px;
+}
+.unchecked-icon--blue {
+    color: #003164;
+}
+.unchecked-icon--red {
+    color: #FF4384;
+}
+.unchecked-icon--white {
+    color: #FFF;
+}
+.task-info {
+    display: flex;
+}
+.processing-task .task-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.processing-task .task-content__text{
+    font-size: 24px;
+    font-weight: bold;
+    color: #003164;
+}
+.complete-icon {
+    font-size: 12px;
+    margin-left: 5px;
+}
+.complete-icon--blue {
+    color: #003164;
+}
+.complete-icon--white {
+    color: #003164;
+}
+.time-icon { 
+    font-size: 12px;
+    margin-left: 5px;
+}
+.time-icon--red {
+    color: #FF4384;
+}
+.main-page .remain-time__text{
+    font-size: 176px;
+    color: #FF4384;
+    font-weight: bold;
+}
+.waiting-task-list {
+    width: 445px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 49, 100, 0.2);
+}
+.waiting-task-list .task-content {
+    display: flex;
+    align-items: center;
+}
+.waiting-task-list .task-content__text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #003164;
+    margin-left: 4px;
+}
+.main-page .menu-item{
+    margin-bottom: 48px;
+    text-align: right;
+}
+.main-page .menu-item__icon{
+    font-size: 36px;
+    color: #fff;
+}
+.main-page .menu-item:hover{
+    margin-bottom: 36px;
+}
+.main-page .menu-item:hover .menu-item__icon{
+    font-size: 48px;
+    color: #FF4384;
+}
+.logo .logo__text {
+    margin-top: 335px;
+    font-size: 24px;
+    font-family: 'Futura';
+    font-weight: bold;
+    color: #FFF;
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    transform-origin: 100% 0%;
+}
+.timing {
+    width: 540px;
+    height: 540px;
+    border: 4px solid #FF4384;
+    border-radius: 50%;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left: -40vw;
+    margin:auto; 
+}
+.timing-inner {
+    width: 510px;
+    height: 510px;
+    border-radius: 50%;
+    background-color: #FF4384;
+    border: 4px solid #FF4384;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left: 0;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+.timing-inner .status-icon {
+    font-size: 96px;
+    color: #fff;
+    margin-left: 12px;
+    z-index: 3;
+}
+.stop {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    margin-top: 48px;
+    z-index: 3;
+    cursor: pointer;
+}
+/***** ToDoList *****/
+.todo-list-page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: -100vw;
+    background-color: #003164;
+    transition: right 0.5s ease-in-out;
+    z-index: 999;
+    display: flex;
+}
+.todo-list-page .left-content {
+    width: 45%;
+    padding: 48px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu-item{
+    margin-bottom: 48px;
+    text-align: left;
+}
+.menu-item__link {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+.menu-item__icon{
+    font-size: 36px;
+    color: #fff;
+    margin-right: 15px;
+}
+.menu-item__link--hover, .menu-item__icon--hover{
+    font-size: 36px;
+    color: #FF4384;
+}
+.half-circle {
+    width: 350px;
+    height: 175px;
+    border-radius: 350px 350px 0 0;
+    background-color: #FFEDF7;
+    align-self: center;
+    margin-bottom: -48px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.half-circle-inner {
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    background-color: #003164;
+    position: absolute;
+    top:-175px;
+    right:0;
+    bottom:0;
+    left: 0;
+    margin:auto;
+}
+.play-circle{
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    border: 2px solid #FF4384;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left: 0;
+    margin:auto;
+}
+.play-icon-circle{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #FF4384;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left: 0;
+    margin:auto;
+}
+.play-icon-circle__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left: 0;
+    margin:auto;
+}
+.play-icon-circle__icon{
+    font-size: 70px;
+    color: #FFF;
+}
+.half-circle .remain-time .remain-time__text{
+    font-size: 64px;
+    font-weight: bold;
+    color: #FF4384;
+    margin-bottom: 5px;
+}
+.half-circle .task-content .task-content__text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #003164;
+    margin-bottom: 15px;
+}
+.todo-list-page .center-content {
+    width: 45%;
+    padding: 48px 80px;
+    position: relative;
+}
+.todo-list-page .center-content .center-content__todo-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.todo-list-page .center-content .center-content__analytics {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+}
+.todo-list-page .center-content .center-content__music {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+}
+
+
+.todo-list-page .center-content .list-block {
+    margin-top: 50px;
+}
+.todo-list-page .center-content .title{
+    background: rgba(255, 255, 255, 0.2);
+    width: 445px;
+    padding: 16px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.list-block .list-block__ul {
+    margin-top: 15px;
+}
+.list-block .waiting-task-list {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.list-block .waiting-task-list .task-content .task-content__text {
+    color: #FFF;
+}
+.list-block .unchecked-icon {
+    margin-right: 0;
+}
+.checked-icon {
+    cursor: pointer;
+}
+.checked-icon--sm {
+    font-size: 24px;
+}
+.checked-icon--white {
+    color: #FFF;
+}
+.play-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+.play-icon--blue {
+    color: #003164;
+}
+.play-icon--white {
+    color: #fff;
+}
+.done-block .task-content .task-content__text {
+    text-decoration: line-through;
+}
+.todo-list-page .right-content {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 48px 80px;
+    position: relative;
+}
+.home .home__icon {
+    font-size: 48px;
+    color: #FFF;
+}
+.chart {
+    margin-top: 16px;
+}
+.chart-block {
+    width: 445px;
+}
+.date-choose {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.date-choose__text {
+    cursor: initial;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 15px;
+}
+.date-choose__before-icon, .date-choose__next-icon {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: normal;
+}
+.count-block {
+    width: 445px;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 30px 0;
+}
+.today, .week {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.count__title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+    margin-bottom: 10px;
+}
+.county-info {
+    display: flex;
+    align-items: flex-end;
+}
+.count-info__num {
+    font-size: 64px;
+    font-weight: bold;
+    color: #FF4384;
+}
+.count-info__text {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(255,255,255,0.2);
+}
+.select-block {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+.select-block__item {
+    display: flex;
+    align-items: center;
+    flex-basis: 150px;
+}
+.select-block__text {
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/***** RWD *****/
+@media (max-width: 1475px) {
+    .timing {
+        width: 35vw;
+        height: 35vw;
+        left: -30vw;
+    }
+    .timing-inner {
+        width: 34vw;
+        height: 34vw;
+    }
+    .left-content {
+        width: 70vw;
+    }
+    .right-content {
+        width: 30vw;
+    }
+}
