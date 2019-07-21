@@ -1,10 +1,17 @@
 // init
-var data = [{index:"1", content:"寫 HTML", completePomoNum:"3", status: "running", date: "2019.7.14"},
-{index:"2", content:"寫 CSS", completePomoNum:"0", status: "incomplete", date: "2019.7.15"},
-{index:"3", content:"寫 JavaScript", completePomoNum:"0", status: "incomplete", date: "2019.7.16"},
-{index:"4", content:"寫 Python", completePomoNum:"0", status: "incomplete", date: "2019.7.17"}];
+var data = [{index:"5", content:"郵件格式研究", completePomoNum:"3", status: "running", date: "2019.7.14"},
+{index:"6", content:"停止登入功能", completePomoNum:"0", status: "incomplete", date: "2019.7.15"},
+{index:"7", content:"是否將 HTTP 重啟", completePomoNum:"0", status: "incomplete", date: "2019.7.16"},
+{index:"8", content:"管理員改為可選擇多人", completePomoNum:"0", status: "incomplete", date: "2019.7.17"}];
+var complete_data = [{index:"1", content:"擬定專案內容", completePomoNum:"3", status: "complete", date: "2019.7.18"},
+{index:"2", content:"架構規劃", completePomoNum:"5", status: "complete", date: "2019.7.19"},
+{index:"3", content:"底層框架撰寫", completePomoNum:"2", status: "complete", date: "2019.7.16"},
+{index:"4", content:"選擇主題", completePomoNum:"1", status: "complete", date: "2019.7.16"}];
 // 存入 localStorage 中
 localStorage.setItem('data', JSON.stringify(data));
+localStorage.setItem('complete_data', JSON.stringify(complete_data));
+localStorage.setItem('work-alert', 'ALARM');
+localStorage.setItem('break-alert', 'ALARM');
 // 設定 toDoList 畫面
 setToDoList();
 
@@ -426,7 +433,7 @@ function showToDoListPage() {
         var index = data[data.length-1].index + 1;
         var mission = {};
         mission.index = index;
-        mission.content = document.querySelector('.add-task .add-task__input').value;
+        mission.content = document.querySelector('.center-content .add-task .add-task__input').value;
         mission.completePomoNum = 0;
         mission.status = 'incomplete';
         data.push(mission);
@@ -435,7 +442,7 @@ function showToDoListPage() {
         document.querySelector('.todo-block ul').innerHTML = '';
         renderSpecificList(document.querySelector('.todo-block ul'), 'incomplete', 7);
         // 清空輸入框
-        document.querySelector('.add-task .add-task__input').value = '';
+        document.querySelector('.center-content .add-task .add-task__input').value = '';
     });
 }
 // 切換到 To-Do List 畫面 -- 外層
